@@ -1,0 +1,16 @@
+package com.chineselearning.chineselearningapi.quiz.repository;
+
+import com.chineselearning.chineselearningapi.quiz.entity.QuizQuestion;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface QuizQuestionRepository
+        extends JpaRepository<QuizQuestion, Long> {
+
+    List<QuizQuestion>
+    findAllByQuizIdOrderByQuestionOrderAsc(
+            Long quizId
+    );
+}
